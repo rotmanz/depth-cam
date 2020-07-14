@@ -63,6 +63,9 @@ class LiveCapture:
         for dev in devices:
             dev.hardware_reset()
 
+        self.pipe = rs.pipeline()
+        self.cfg = rs.config()
+
         sleep(15)
 
 

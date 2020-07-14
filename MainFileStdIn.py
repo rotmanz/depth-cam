@@ -132,14 +132,7 @@ def save_data_to_PC(PCF, averageImage , irImage , colorImage , x , y , z , mask2
     np.savez(outfile , averageImage , irImage , colorImage , x , y , z)
 
 
-if __name__ == '__main__':
-
-
-
-
-
-
-
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-FF", help="reads image stream from file instead of camera")
     parser.add_argument("-SF", help="settings file used for capture and process stages. settings are being modified by calibraion process")
@@ -200,7 +193,7 @@ if __name__ == '__main__':
                     # live_capture.stop()
                 except ConnectionError as e:
                     print(e,flush=True)
-                    live_capture.pipe = None
+                    # live_capture.pipe = None
                     # sys.exit(-1)
                     # print('\nExit,-1\n ',flush=True)
                     print('first attempt failed\n ' , flush=True)
@@ -558,6 +551,16 @@ if __name__ == '__main__':
             else:
                 print (args.OP + ' is not a supported operation',flush=True)
                 print('\nExit,-6\n ',flush=True)
+
+
+
+
+
+
+
+
+if __name__ == '__main__':
+    main()
 
 
 
